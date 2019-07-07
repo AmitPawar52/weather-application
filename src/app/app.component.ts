@@ -8,7 +8,7 @@ import { IWeatherData } from './models/IWeatherData.interface';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'My Weather App';
+  title = 'NowDays Weather App';
   cityDetails: IWeatherData;
   cityDetails2: IWeatherData;
 
