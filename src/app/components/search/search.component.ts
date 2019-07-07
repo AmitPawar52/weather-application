@@ -20,7 +20,7 @@ export class SearchComponent implements OnInit {
     ngOnInit() {
     }
 
-    search(term) {
+    search(term:string) {
         /*
             CHALLENGE
                 - if user has typed something in the input field,
@@ -28,11 +28,12 @@ export class SearchComponent implements OnInit {
                   and assign the results to searchResults array
                 - if input field is empty, clear the searResults array
         */
-       console.log(term);
-       this.weatherService.searchLocation(this.searchInput.nativeElement.value).subscribe(data => {
+      if(term.length > 0) {
+       this.weatherService.searchLocation(term).subscribe(data => {
             this.searchResults2 = data;
             this.searchResults = this.searchResults2;
        });
+      }
     }
 
     selectedLocation(cityDetails: ISearchResult) {
